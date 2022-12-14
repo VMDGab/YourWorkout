@@ -14,8 +14,10 @@ export function Routes(){
   
     return(
 
-        <Tab.Navigator initialRouteName="Dashboard" 
+        <Tab.Navigator 
+        initialRouteName="Inicio" 
         screenOptions={{
+    
             tabBarActiveTintColor: theme.colors.Primary,
             tabBarInactiveTintColor: theme.colors.Title,
             tabBarLabelPosition: 'below-icon',
@@ -26,6 +28,7 @@ export function Routes(){
               paddingBottom:13,
               borderTopColor: theme.colors.Primary,
               borderTopWidth:3,
+              backgroundColor: theme.colors.BACKGROUND,
             },
             tabBarLabelStyle: {
               fontFamily: theme.Fonts.Medium
