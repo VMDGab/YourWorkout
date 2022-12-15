@@ -1,9 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons, Octicons, AntDesign } from '@expo/vector-icons'
-import { Dashboard } from "../pages/Dashboard";
-import { Resume } from "../pages/Resume";
-import { Workouts } from "../pages/Workouts";
+import { Dashboard } from "../pages/MainScreens/Dashboard";
+import { Resume } from "../pages/MainScreens/Resume";
+import { Workouts } from "../pages/MainScreens/Workouts";
 import { Platform } from 'react-native'
 import Theme from "../global/styles/Theme";
 const Tab = createBottomTabNavigator();
