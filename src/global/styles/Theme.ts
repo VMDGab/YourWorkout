@@ -5,7 +5,7 @@ export default {
         BACKGROUND: '#ECF0F1',
         Title: '#313638',
         Primary: '#D6312E',
-   
+        Shape: '#fff',
     },
 
     Fonts: {

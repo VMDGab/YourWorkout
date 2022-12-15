@@ -7,7 +7,7 @@ export const Button = styled.TouchableOpacity.attrs({
 })`
   width:300px;
   height: 33px;
-  background-color: ${({ theme }) => theme.colors.BACKGROUND};
+  background-color: ${({ theme }) => theme.colors.Shape};
   border-radius: 25px;
   align-items: center;
   flex-direction: row;

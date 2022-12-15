@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import LogoSvg from '../../assets/Logo.svg'
+import HalterTabSvg from '../../assets/HalterTab.svg'
 import { ContentButton } from '../../components/ContentButton';
 
 import {
@@ -15,6 +16,11 @@ import {
   UserPhoto,
   Logo,
   Options,
+  TodayWorkout,
+  Title,
+  WorkoutButton,
+  ArrowIcon,
+  WorkoutTitle,
 } from './styles';
 
 export function Dashboard() {
@@ -71,6 +77,20 @@ export function Dashboard() {
       <Logo>
         <LogoSvg />
       </Logo>
+
+    
+      <Title>
+      Treino de Hoje
+      </Title>
+      <TodayWorkout>
+      <WorkoutButton>
+        <HalterTabSvg/> 
+        <WorkoutTitle>Costa, Bíceps e antebraço</WorkoutTitle>
+         <ArrowIcon name="keyboard-arrow-right"/>
+      </WorkoutButton>
+
+       
+    </TodayWorkout>
 
     <Options>
         <ContentButton title='Monte seu Treino' icon='arm-flex-outline' />

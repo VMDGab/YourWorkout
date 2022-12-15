@@ -60,5 +60,49 @@ align-items: center;
 `
 export const Options = styled.View`
 padding: 24px;
+justify-content: center;
 align-items: center;
+`
+export const TodayWorkout = styled.View`
+
+justify-content: center;
+align-items: center;
+margin-bottom: 30px;
+`
+export const Title = styled.Text`
+
+font-family: ${({theme}) => theme.Fonts.SemiBold};
+color: ${({theme}) => theme.colors.Title};
+font-size: 15px;
+margin-top: 30px;
+margin-left: 40px;
+
+`
+export const WorkoutButton = styled.TouchableOpacity.attrs({
+  activeOpacity: .7
+})`
+width:320px;
+margin-top:8px;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+background-color: ${({theme}) => theme.colors.Shape};
+padding:15px 10px ;
+border-radius:10px;
+border-width:1px;
+border-color: ${({theme}) => theme.colors.Primary};
+`
+export const ArrowIcon = styled(MaterialIcons)`
+
+font-size: 25px;
+color: ${({theme}) => theme.colors.Primary};
+`
+export const WorkoutTitle = styled.Text`
+
+font-family: ${({theme}) => theme.Fonts.SemiBold};
+color: ${({theme}) => theme.colors.Title};
+font-size: 15px;
+
+margin-left: 10px;
+
 `

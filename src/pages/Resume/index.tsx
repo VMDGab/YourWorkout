@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from './styles';
 
-export function Profile() {
+export function Resume() {
   return (
     <Container>
 
