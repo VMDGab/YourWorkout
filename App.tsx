@@ -2,7 +2,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
 import { Routes } from './src/routes/app.routes';
-
+import { AuthRoutes } from './src/routes/auth.routes';
 import { Initial } from './src/pages/AuthScreens/Initial';
 import { useFonts, Prompt_600SemiBold, Prompt_500Medium, Prompt_700Bold } from '@expo-google-fonts/prompt';
 
@@ -10,6 +10,7 @@ import { useFonts, Prompt_600SemiBold, Prompt_500Medium, Prompt_700Bold } from '
 
 import Theme from './src/global/styles/Theme';
 import AppLoading from 'expo-app-loading';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 //---------------------------------------------------
@@ -35,7 +36,9 @@ export default function App() {
   return (
 
     <ThemeProvider theme={Theme} >
-        <Initial />
+      <NavigationContainer>
+        <AuthRoutes/>
+        </NavigationContainer>
     </ThemeProvider>
 
   );

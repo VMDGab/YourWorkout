@@ -37,7 +37,7 @@ export const SignUpButton = styled.TouchableOpacity.attrs({
     activeOpacity: .7
 })`
 width: 70%;
-height: ${RFPercentage(6)}px;
+height: ${RFPercentage(7)}px;
 border-radius: 50px;
 border-width:3px;
 border-color:${({theme}) => theme.colors.Primary};

@@ -14,11 +14,15 @@ import {
     Title,
 } from './styles';
 
+import { useNavigation } from '@react-navigation/native';
 
 export function Initial() {
+
+const navigation = useNavigation();
+
     return (
         <Container>
-            <Svgs>
+                        <Svgs>
                 <LogoSvg />
                 <InitalSvg />
             </Svgs>
@@ -30,7 +34,7 @@ export function Initial() {
             </MainText>
 
             <LoginOptions>
-                <Button Title='Fazer Login' />
+                <Button Title='Fazer Login' onPress={() => navigation.navigate('SignIn')}/>
 
                 <Separator>
                     <Line />

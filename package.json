@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^2.9.10",
     "@react-navigation/bottom-tabs": "^6.5.1",
     "@react-navigation/native": "^6.1.1",
+    "@react-navigation/native-stack": "^6.9.6",
     "@types/styled-components-react-native": "^5.2.0",
     "expo": "~47.0.8",
     "expo-app-loading": "~2.1.1",
