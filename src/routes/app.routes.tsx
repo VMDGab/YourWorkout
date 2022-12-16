@@ -8,7 +8,7 @@ import { Platform } from 'react-native'
 import Theme from "../global/styles/Theme";
 const Tab = createBottomTabNavigator();
 
-export function Routes() {
+export function AppRoutes() {
 
   const theme = Theme
 

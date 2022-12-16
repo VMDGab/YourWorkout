@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
-import { Routes } from './src/routes/app.routes';
+import { AppRoutes } from './src/routes/app.routes';
 import { AuthRoutes } from './src/routes/auth.routes';
 import { Initial } from './src/pages/AuthScreens/Initial';
 import { useFonts, Prompt_600SemiBold, Prompt_500Medium, Prompt_700Bold } from '@expo-google-fonts/prompt';
-
+import { BuildWorkout } from './src/pages/UserInteractionScreens/BuildWorkout';
 //--------------------------------------------------
 
 import Theme from './src/global/styles/Theme';
@@ -37,7 +37,7 @@ export default function App() {
 
     <ThemeProvider theme={Theme} >
       <NavigationContainer>
-        <AuthRoutes/>
+        <BuildWorkout/>
         </NavigationContainer>
     </ThemeProvider>
 

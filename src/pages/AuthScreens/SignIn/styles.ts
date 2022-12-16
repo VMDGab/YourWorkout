@@ -8,7 +8,7 @@ export const Container = styled.View`
 export const Svgs = styled.View`
 align-items: center;
 margin-top:150px;
-
+flex:.9;
 `
 export const Icon = styled(MaterialIcons)`
 margin-top:-7px;
@@ -46,7 +46,7 @@ text-align: center;
 `
 
 export const TextContainer = styled.View`
-margin-top:-110%;
+margin-top:-100%;
 align-items: flex-start;
 align-self: center;
 `

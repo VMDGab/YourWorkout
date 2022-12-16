@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import LogoSvg from '../../assets/Logo.svg'
-import HalterTabSvg from '../../assets/HalterTab.svg'
+import LogoSvg from '../../../assets/Logo.svg'
+import HalterTabSvg from '../../../assets/HalterTab.svg'
 import { ContentButton } from '../../../components/ContentButton';
 
 import {

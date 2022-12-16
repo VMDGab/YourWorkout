@@ -53,6 +53,7 @@ export function SignIn() {
   })
 
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <Container>
 
       <SignUpContainer>
@@ -61,7 +62,7 @@ export function SignIn() {
           <Icon name="keyboard-arrow-right" />
         </SignUpButton>
       </SignUpContainer>
-
+    
       <Svgs>
         <SignInImageSvg />
       </Svgs>
@@ -104,5 +105,6 @@ export function SignIn() {
         <SignInSocialButton title='' svg={apple}/>
       </SocialLoginOptions>
     </Container>
+    </TouchableWithoutFeedback>
   );
 }
