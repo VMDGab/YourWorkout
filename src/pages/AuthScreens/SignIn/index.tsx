@@ -7,7 +7,7 @@ import { InputForm } from '../../../components/InputForm';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-
+import { useNavigation } from '@react-navigation/native';
 import { Alert } from 'react-native';
 import { TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView } from 'react-native';
 
@@ -40,6 +40,8 @@ const schema = Yup.object().shape({
 
 export function SignIn() {
 
+  const navigation = useNavigation();
+
   const {
     formState: { errors },
     handleSubmit,
@@ -54,7 +56,7 @@ export function SignIn() {
     <Container>
 
       <SignUpContainer>
-        <SignUpButton>
+        <SignUpButton onPress={() => navigation.navigate('SignUp')}>
           <Title>Cadastrar-se</Title>
           <Icon name="keyboard-arrow-right" />
         </SignUpButton>
