@@ -30,7 +30,7 @@ function StackRoutes(){
           paddingBottom: 13,
           borderTopColor: theme.colors.Primary,
           borderTopWidth: 3,
-          backgroundColor: theme.colors.BACKGROUND,
+          backgroundColor: theme.colors.Shape,
         },
         tabBarLabelStyle: {
           fontFamily: theme.Fonts.Medium

@@ -8,17 +8,19 @@ export const Container = styled.View`
 
 export const Header = styled.View`
 
-height: 20%;
-flex-direction: row;
+height: 40%;
+
 justify-content: space-between;
 padding: 20px 24px 0;
-align-items: center;
+
 
 background-color: ${({theme}) => theme.colors.Primary};
 
 `
 export const HeaderWrapper = styled.View`
+
 flex-direction: row;
+margin-top: 50px;
 `
 export const GrettingsMessage = styled.Text`
 
@@ -62,47 +64,49 @@ export const Options = styled.View`
 padding: 24px;
 justify-content: center;
 align-items: center;
+margin-top: 100px;
 `
 export const TodayWorkout = styled.View`
-
-justify-content: center;
-align-items: center;
-margin-bottom: 30px;
+align-items: flex-end;
+justify-content: space-between;
+height:100px;
 `
 export const Title = styled.Text`
 
 font-family: ${({theme}) => theme.Fonts.SemiBold};
-color: ${({theme}) => theme.colors.Title};
+color: ${({theme}) => theme.colors.Shape};
 font-size: 15px;
-margin-top: 30px;
-margin-left: 40px;
+margin-top: 60px;
+margin-left: 10px;
 
 `
 export const WorkoutButton = styled.TouchableOpacity.attrs({
   activeOpacity: .7
 })`
-width:320px;
-margin-top:8px;
-flex-direction:row;
+width:350px;
+height:150px;
 justify-content:space-between;
 align-items:center;
 background-color: ${({theme}) => theme.colors.Shape};
-padding:15px 10px ;
+padding:15px 20px ;
 border-radius:10px;
 border-width:1px;
 border-color: ${({theme}) => theme.colors.Primary};
-`
-export const ArrowIcon = styled(MaterialIcons)`
 
-font-size: 25px;
-color: ${({theme}) => theme.colors.Primary};
 `
+
 export const WorkoutTitle = styled.Text`
 
 font-family: ${({theme}) => theme.Fonts.SemiBold};
 color: ${({theme}) => theme.colors.Title};
 font-size: 15px;
 
-margin-left: 10px;
+text-align: right;
 
+
+`
+export const WorkoutButtonWrapper = styled.View`
+flex-direction: row;
+justify-content: center;
+align-items: center;
 `

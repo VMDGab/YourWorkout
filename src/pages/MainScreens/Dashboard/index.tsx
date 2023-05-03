@@ -4,25 +4,24 @@ import LogoSvg from '../../../assets/Logo.svg'
 import HalterTabSvg from '../../../assets/HalterTab.svg'
 import { ContentButton } from '../../../components/ContentButton';
 
+
 import {
   Container,
   Header,
   HeaderWrapper,
   GrettingsMessage,
   UserName,
-  LogoutButton,
-  LogoutIcon,
   TextWrapper,
   UserPhoto,
-  Logo,
   Options,
   TodayWorkout,
   Title,
   WorkoutButton,
-  ArrowIcon,
   WorkoutTitle,
+  WorkoutButtonWrapper,
 } from './styles';
 import { useNavigation } from '@react-navigation/native';
+import { TrainingAnime } from '../../../components/TrainingAnime';
 
 export function Dashboard() {
 
@@ -68,38 +67,33 @@ export function Dashboard() {
 
         </HeaderWrapper>
 
-        <LogoutButton>
 
-          <LogoutIcon name='logout' />
+        <Title>
+          Treino de Hoje
+        </Title>
 
-        </LogoutButton>
+        <WorkoutButton>
+          <WorkoutButtonWrapper>
+            <TrainingAnime />
+            <TodayWorkout>
+            <HalterTabSvg />
+            <WorkoutTitle>Costa, Bíceps{'\n'}e antebraço</WorkoutTitle>
+            
+          </TodayWorkout>
+          </WorkoutButtonWrapper>
+        </WorkoutButton>
 
       </Header>
 
-      <Logo>
-        <LogoSvg />
-      </Logo>
 
-    
-      <Title>
-      Treino de Hoje
-      </Title>
-      <TodayWorkout>
-      <WorkoutButton>
-        <HalterTabSvg/> 
-        <WorkoutTitle>Costa, Bíceps e antebraço</WorkoutTitle>
-         <ArrowIcon name="keyboard-arrow-right"/>
-      </WorkoutButton>
 
-       
-    </TodayWorkout>
 
-    <Options>
-        <ContentButton title='Monte seu Treino' icon='arm-flex-outline' onPress={() => navigation.navigate('BuildWorkout')}/>
+      <Options>
+        <ContentButton title='Monte seu Treino' icon='arm-flex-outline' onPress={() => navigation.navigate('BuildWorkout')} />
         <ContentButton title='Monte sua Dieta' icon='playlist-edit' />
         <ContentButton title='Calcule seus Macros' icon='calculator-variant-outline' />
-    </Options>
-    
+      </Options>
+
     </Container>
   );
 }

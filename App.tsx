@@ -2,8 +2,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
 import AppRoutes from './src/routes/app.routes';
-import { StackRoutes } from './src/routes/stack.routes';
-import { Initial } from './src/pages/AuthScreens/Initial';
+import { NewDiet } from './src/pages/UserInteractionScreens/NewDiet';
 import { useFonts, Prompt_600SemiBold, Prompt_500Medium, Prompt_700Bold } from '@expo-google-fonts/prompt';
 
 //--------------------------------------------------
@@ -37,7 +36,7 @@ export default function App() {
 
     <ThemeProvider theme={Theme} >
       <NavigationContainer>
-         <AppRoutes/>
+         <NewDiet/>
         </NavigationContainer>
     </ThemeProvider>
 

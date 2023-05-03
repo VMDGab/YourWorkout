@@ -6,6 +6,7 @@ export default {
         Title: '#313638',
         Primary: '#D6312E',
         Shape: '#fff',
+        border:'#d3d3d3'
     },
 
     Fonts: {

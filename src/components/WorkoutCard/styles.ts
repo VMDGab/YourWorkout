@@ -12,9 +12,10 @@ align-items:center;
 
 border-width: 2px;
 border-radius: 10px;
-border-color: ${({theme}) => theme.colors.Title};
+border-color: ${({theme}) => theme.colors.border};
 
 margin-Top: 20px;
+background-color: ${({theme}) => theme.colors.Shape};
 `;
 
 export const WorkoutContainer = styled.View`

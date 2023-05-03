@@ -32,7 +32,7 @@ width: 40px;
 border-width: 2px;
 border-radius: 10px;
 border-color: ${({theme}) => theme.colors.Primary};
-
+background-color: ${({theme}) => theme.colors.Shape};
 align-items: center;
 justify-content: center;
 `
@@ -44,7 +44,7 @@ width: 240px;
 border-width: 2px;
 border-radius: 10px;
 border-color: ${({theme}) => theme.colors.Primary};
-
+background-color: ${({theme}) => theme.colors.Shape};
 padding-left: 10px;
 
 font-family: ${(props) => props.theme.Fonts.SemiBold} ;

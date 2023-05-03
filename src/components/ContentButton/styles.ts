@@ -6,14 +6,14 @@ export const Button = styled.TouchableOpacity.attrs({
   activeOpacity: .7
 })`
   width:300px;
-  height: 33px;
+  height: 40px;
   background-color: ${({ theme }) => theme.colors.Shape};
-  border-radius: 25px;
+  border-radius: 10px;
   align-items: center;
   flex-direction: row;
   margin-bottom: 16px;
-  border-width: 1px;
-  border-color: ${({ theme }) => theme.colors.Title};
+  border-width: 1.5px;
+  border-color: ${({ theme }) => theme.colors.border};
 `;
 
 export const IconContainer = styled.View`
