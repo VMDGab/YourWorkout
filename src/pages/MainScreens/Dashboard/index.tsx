@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import LogoSvg from '../../../assets/Logo.svg'
+
 import HalterTabSvg from '../../../assets/HalterTab.svg'
-import { ContentButton } from '../../../components/ContentButton';
 
 
+import { useNavigation } from '@react-navigation/native';
+import { TrainingAnime } from '../../../components/TrainingAnime';
+
+import { NewCard } from '../../../components/NewCard';
 import {
   Container,
   Header,
@@ -13,15 +16,19 @@ import {
   UserName,
   TextWrapper,
   UserPhoto,
-  Options,
   TodayWorkout,
   Title,
   WorkoutButton,
   WorkoutTitle,
   WorkoutButtonWrapper,
+  InfoWorkout,
+  Content,
+  Cards,
+  Menu,
+  MenuIcon,
 } from './styles';
-import { useNavigation } from '@react-navigation/native';
-import { TrainingAnime } from '../../../components/TrainingAnime';
+import { ContentButton } from '../../../components/ContentButton';
+
 
 export function Dashboard() {
 
@@ -66,34 +73,37 @@ export function Dashboard() {
           </TextWrapper>
 
         </HeaderWrapper>
-
-
+        <Menu>
+          <MenuIcon name= 'menu'/>
+        </Menu>
+      </Header>
+<Content>
         <Title>
           Treino de Hoje
         </Title>
+<TodayWorkout>
+        
 
         <WorkoutButton>
           <WorkoutButtonWrapper>
             <TrainingAnime />
-            <TodayWorkout>
+            
+            <InfoWorkout>
             <HalterTabSvg />
             <WorkoutTitle>Costa, Bíceps{'\n'}e antebraço</WorkoutTitle>
-            
-          </TodayWorkout>
+            </InfoWorkout>
+         
           </WorkoutButtonWrapper>
         </WorkoutButton>
+        <ContentButton icon='arm-flex-outline' title='Iniciar outro treino' style={{alignSelf: 'center', marginTop:20}}/>
 
-      </Header>
-
-
-
-
-      <Options>
-        <ContentButton title='Monte seu Treino' icon='arm-flex-outline' onPress={() => navigation.navigate('BuildWorkout')} />
-        <ContentButton title='Monte sua Dieta' icon='playlist-edit' />
-        <ContentButton title='Calcule seus Macros' icon='calculator-variant-outline' />
-      </Options>
-
+ </TodayWorkout>
+    <Title>Afim de inovar?</Title>
+   <Cards>
+   <NewCard type='Workout' onPress={() => navigation.navigate('BuildWorkout')}/>
+   <NewCard type='Diet'/>
+  </Cards>
+</Content>
     </Container>
   );
 }

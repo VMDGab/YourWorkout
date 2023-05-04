@@ -7,20 +7,22 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
+flex-direction: row;
+height: 155px;
 
-height: 40%;
-
+align-items: center;
 justify-content: space-between;
-padding: 20px 24px 0;
+padding: 50px 24px 0;
 
 
 background-color: ${({theme}) => theme.colors.Primary};
 
+border-bottom-left-radius: 15px ;
+border-bottom-right-radius: 15px ;
+
 `
 export const HeaderWrapper = styled.View`
-
 flex-direction: row;
-margin-top: 50px;
 `
 export const GrettingsMessage = styled.Text`
 
@@ -35,10 +37,10 @@ font-family: ${({theme}) => theme.Fonts.SemiBold};
 color: ${({theme}) => theme.colors.BACKGROUND};
 font-size: 20px;
 `
-export const LogoutButton = styled.TouchableOpacity.attrs({
-  activeOpacity: .7
+export const Menu = styled.TouchableOpacity.attrs({
+  activeOpacity: .8
 })``
-export const LogoutIcon = styled(MaterialIcons)`
+export const MenuIcon = styled(MaterialIcons)`
 
 font-size: 20px;
 color: ${({theme}) => theme.colors.BACKGROUND};
@@ -55,33 +57,21 @@ width: 50px;
 margin-right: 15px;
 border-radius: 10px;
 `
-
-export const Logo = styled.View`
-padding: 24px;
-align-items: center;
-`
-export const Options = styled.View`
-padding: 24px;
-justify-content: center;
-align-items: center;
-margin-top: 100px;
-`
 export const TodayWorkout = styled.View`
-align-items: flex-end;
-justify-content: space-between;
-height:100px;
+padding: 10px 0px 0px;
+align-items: center;
 `
 export const Title = styled.Text`
 
 font-family: ${({theme}) => theme.Fonts.SemiBold};
-color: ${({theme}) => theme.colors.Shape};
-font-size: 15px;
-margin-top: 60px;
-margin-left: 10px;
+color: ${({theme}) => theme.colors.Title};
+font-size: 20px;
+margin-top: 20px;
+margin-left: 30px;
 
 `
 export const WorkoutButton = styled.TouchableOpacity.attrs({
-  activeOpacity: .7
+  activeOpacity: .9
 })`
 width:350px;
 height:150px;
@@ -90,8 +80,8 @@ align-items:center;
 background-color: ${({theme}) => theme.colors.Shape};
 padding:15px 20px ;
 border-radius:10px;
-border-width:1px;
-border-color: ${({theme}) => theme.colors.Primary};
+border-width:1.5px;
+border-color: ${({theme}) => theme.colors.border};
 
 `
 
@@ -110,3 +100,19 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 `
+
+export const InfoWorkout = styled.View`
+align-items: flex-end;
+justify-content: space-between;
+height:100px;
+`
+
+export const Cards = styled.View`
+flex: 1;
+flex-direction: row;
+justify-content: space-between;
+padding: 10px 24px;
+`
+export const Content = styled.ScrollView.attrs({
+   showsVerticalScrollIndicator: false
+})``

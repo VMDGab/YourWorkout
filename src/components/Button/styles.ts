@@ -9,7 +9,7 @@ export const ButtonStyle = styled.TouchableOpacity.attrs({
 })`
 width: 70%;
 height: ${RFPercentage(7)}px;
-border-radius: 50px;
+border-radius: 20px;
 background-color: ${(props) => props.theme.colors.Primary};
 align-self: center;
 align-items: center ;

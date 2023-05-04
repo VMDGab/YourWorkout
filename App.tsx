@@ -36,7 +36,7 @@ export default function App() {
 
     <ThemeProvider theme={Theme} >
       <NavigationContainer>
-         <NewDiet/>
+         <AppRoutes/>
         </NavigationContainer>
     </ThemeProvider>
 
