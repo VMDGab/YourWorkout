@@ -71,7 +71,7 @@ margin-left: 30px;
 
 `
 export const WorkoutButton = styled.TouchableOpacity.attrs({
-  activeOpacity: .9
+  activeOpacity: .8
 })`
 width:350px;
 height:150px;

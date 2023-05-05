@@ -4,22 +4,34 @@ import {
     WorkoutContainer,
     Title,
     Icon,
+    Info,
+    Repetitions,
+    Series,
+    Volume,
 } from './styles';
 
 import HalterTabSvg from '../../assets/HalterTab.svg'
 
-interface Props{
-    title: string
+interface Props {
+    title: string,
+    series: number,
+    repetitions: number,
 }
 
-export function WorkoutCard({title}: Props) {
+export function WorkoutCard({ title, series, repetitions }: Props) {
     return (
         <Container>
-            <WorkoutContainer>
-                <HalterTabSvg/>
-                <Title>{title}</Title>
-            </WorkoutContainer>
-
+            <Info>
+                <WorkoutContainer>
+                    <HalterTabSvg />
+                   <Volume>
+                    <Series>{series} Series</Series>
+                    <Repetitions>{repetitions} Reps</Repetitions>
+                </Volume>
+                </WorkoutContainer>
+ <Title>{title}</Title>
+                
+            </Info>
             <Icon name='pencil-outline' />
 
         </Container>

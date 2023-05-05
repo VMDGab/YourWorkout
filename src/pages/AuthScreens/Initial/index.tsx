@@ -45,7 +45,7 @@ const navigation = useNavigation();
 
                 </Separator>
 
-                <SignUpButton>
+                <SignUpButton onPress={() => navigation.navigate('SignUp')}>
                     <Title>Cadastrar-se</Title>
                 </SignUpButton>
             </LoginOptions>

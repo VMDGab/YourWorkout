@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { AntDesign } from '@expo/vector-icons'; 
 
 export const Container = styled.View`
   flex: 1;
@@ -27,19 +26,19 @@ text-align: center;
 `
 export const InputButton = styled.TouchableOpacity`
 height: 40px;
-width: 40px;
+width: 50%;
 
 border-width: 2px;
 border-radius: 10px;
 border-color: ${({theme}) => theme.colors.Primary};
-background-color: ${({theme}) => theme.colors.Shape};
+background-color: ${({theme}) => theme.colors.Primary};
 align-items: center;
 justify-content: center;
 `
 
 export const Input = styled.TextInput`
 height: 40px;
-width: 240px;
+width: 86%;
 
 border-width: 2px;
 border-radius: 10px;
@@ -49,17 +48,19 @@ padding-left: 10px;
 
 font-family: ${(props) => props.theme.Fonts.SemiBold} ;
 color: ${({theme}) => theme.colors.Title};
+
+align-self: center;
 `
 
 export const InputWrapper = styled.View`
 flex-direction: row;
-justify-content: space-around;
 padding: 24px;
+justify-content: space-between;
 `
-export const Icon = styled(AntDesign)`
-
-font-size: 24px;
-color: ${({theme}) => theme.colors.Primary};
+export const ButtonText = styled.Text`
+font-family: ${(props) => props.theme.Fonts.SemiBold} ;
+font-size: 14px;
+color: ${({theme}) => theme.colors.Shape};
 `
 
 export const Footer = styled.View`
@@ -85,4 +86,34 @@ font-family: ${(props) => props.theme.Fonts.SemiBold} ;
 color: ${({theme}) => theme.colors.Title};
 
 margin: 24px 0px;
+`
+
+export const MiniInput = styled.TextInput`
+height: 40px;
+width: 60px;
+
+border-width: 2px;
+border-radius: 10px;
+border-color: ${({theme}) => theme.colors.Primary};
+background-color: ${({theme}) => theme.colors.Shape};
+
+
+font-family: ${(props) => props.theme.Fonts.SemiBold} ;
+color: ${({theme}) => theme.colors.Title};
+font-size: 9px;
+text-align: center;
+
+
+`
+
+export const FormWrapper = styled.View`
+width: 100%;
+padding: 24px;
+
+`
+export const MiniInputWrapper = styled.View`
+width: 45%;
+flex-direction: row;
+justify-content: space-between;
+
 `

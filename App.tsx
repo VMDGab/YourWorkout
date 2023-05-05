@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
-import AppRoutes from './src/routes/app.routes';
+import AppRoutes from './src/routes/app.routes'; 
 import { NewDiet } from './src/pages/UserInteractionScreens/NewDiet';
 import { useFonts, Prompt_600SemiBold, Prompt_500Medium, Prompt_700Bold } from '@expo-google-fonts/prompt';
 
@@ -10,6 +10,7 @@ import { useFonts, Prompt_600SemiBold, Prompt_500Medium, Prompt_700Bold } from '
 import Theme from './src/global/styles/Theme';
 import AppLoading from 'expo-app-loading';
 import { NavigationContainer } from '@react-navigation/native';
+import { AuthRoutes } from './src/routes/auth.routes';
 
 
 //---------------------------------------------------

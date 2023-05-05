@@ -1,0 +1,22 @@
+{
+  "workout": [
+    {
+      "workout": {
+        "id": "0d850183-4116-4ff2-9a59-a74722a05265",
+        "title": "Costas",
+        "exercises": {
+          "exercise": [
+            {
+              "idExercise": "28850d6e-cd3c-4ce2-a517-5eee32ea4759",
+              "nameExercise": "TERRA",
+              "series": "6",
+              "repetitions": "12"
+            }
+          ]
+        }
+      },
+      "id": 1
+    }
+  ],
+  "Diet": []
+}
