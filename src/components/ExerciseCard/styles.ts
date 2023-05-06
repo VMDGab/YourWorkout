@@ -19,18 +19,38 @@ background-color: ${({theme}) => theme.colors.Shape};
 `;
 
 export const WorkoutContainer = styled.View`
-width: 90%;
 flex-direction: row;
 align-items:center;
 `
 export const Title = styled.Text`
 font-family: ${(props) => props.theme.Fonts.SemiBold} ;
 color: ${({theme}) => theme.colors.Title};
-font-size: 15px;
+font-size: 20px;
 
 margin-left: 5px;
+margin-top: 10px;
 `
 export const Icon = styled(MaterialCommunityIcons)`
 font-size: 20px;
 color: ${({theme}) => theme.colors.Primary};
+`
+export const Info = styled.View`
+width: 90%;
+justify-content: space-between;
+`
+export const Repetitions = styled.Text`
+font-family: ${(props) => props.theme.Fonts.SemiBold} ;
+color: ${({theme}) => theme.colors.Title};
+font-size: 14px;
+margin-left: 10px;
+`
+export const Series = styled.Text`
+font-family: ${(props) => props.theme.Fonts.SemiBold} ;
+color: ${({theme}) => theme.colors.Title};
+font-size: 14px;
+`
+export const Volume = styled.View`
+flex-direction: row;
+justify-content: space-between;
+margin-left: 10px;
 `

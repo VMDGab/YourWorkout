@@ -1,21 +1,46 @@
 {
   "workout": [
     {
-      "workout": {
-        "id": "0d850183-4116-4ff2-9a59-a74722a05265",
-        "title": "Costas",
-        "exercises": {
-          "exercise": [
-            {
-              "idExercise": "28850d6e-cd3c-4ce2-a517-5eee32ea4759",
-              "nameExercise": "TERRA",
-              "series": "6",
-              "repetitions": "12"
-            }
-          ]
+      "id": "0efbbfde-6d51-43de-b2e6-1471fe4c3586",
+      "title": "Costas",
+      "exercises": [
+        {
+          "idExercise": "70fb7d9b-1816-41ce-8baa-7298263b8b1d",
+          "nameExercise": "TERRA",
+          "series": "5",
+          "repetitions": "12"
         }
-      },
-      "id": 1
+      ]
+    },
+    {
+      "id": "617cc867-12e0-4d2c-aca5-f600463b42ef",
+      "title": "Peito, Ombro e Tríceps ",
+      "exercises": [
+        {
+          "idExercise": "66c1958e-9955-4b5d-a187-c38fba928659",
+          "nameExercise": "Supino",
+          "series": "3",
+          "repetitions": "12"
+        }
+      ]
+    },
+    {
+      "id": "93c0ed83-9b1a-4f09-86ea-1c6cb6282b97",
+      "title": "Bíceps",
+      "exercises": [
+        {
+          "idExercise": "fcb58a03-4545-4814-bafd-56d27d905ca7",
+          "nameExercise": "Rosca Scott",
+          "series": "4",
+          "repetitions": "12"
+        },
+        {
+          "idExercise": "d9fd49ad-48c9-4352-a6e2-e1d37edec62d",
+          "nameExercise": "Rosca no banco inclinado ",
+          "series": "3",
+          "repetitions": "12"
+        }
+      ]
     }
   ],
   "Diet": []

@@ -3,8 +3,8 @@ export default {
     colors: {
 
         BACKGROUND: '#ECF0F1',
-        Title: '#313638',
-        Primary: '#D6312E',
+        Title: '#202128',
+        Primary: '#F22248',
         Shape: '#fff',
         border:'#d3d3d3'
     },

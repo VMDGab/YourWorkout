@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FlatList } from 'react-native-gesture-handler';
-import { WorkoutCard } from '../../../components/WorkoutCard';
+import { ExerciseCard } from '../../../components/ExerciseCard';
 import { Button } from '../../../components/Button';
+import { useNavigation } from '@react-navigation/native';
+import uuid from 'react-native-uuid';
+import { api } from '../../../services/api';
+
 import {
     Container,
     Title,
@@ -17,10 +21,6 @@ import {
     MiniInputWrapper,
     ButtonText,
 } from './styles';
-import { useNavigation } from '@react-navigation/native';
-import { WorkoutDTO } from '../../../dtos/workoutDTO';
-import uuid from 'react-native-uuid';
-import { api } from '../../../services/api';
 
 
 interface Props {
@@ -36,14 +36,12 @@ export function BuildWorkout() {
     const navigation = useNavigation()
 
     const [exercise, setExercise] = useState<Props[]>([]);
-    const [workout, setWorkout] = useState<WorkoutDTO[]>()
-
     const [nameExercise, setNameExercise] = useState('');
     const [series, setSeries] = useState(Number);
     const [repetitions, setRepetitions] = useState(Number);
     const [nameWorkout, setNameWorkouk] = useState('')
 
-    
+
 
     function handleSetExercise() {
 
@@ -61,27 +59,19 @@ export function BuildWorkout() {
     }
 
     async function handleSetWorkout() {
-        const Workout = {
-            id: String(uuid.v4()),
-            title: nameWorkout,
-            exercises: {exercise}
-        }
 
-        setWorkout(Workout)
-      
-            if (!workout) {
-                return
-            }
-            else {
-                await api.post('/workout', {
-                    workout
-                })
-            }
-            navigation.navigate('Dashboard')
-    
-        }
+        await api.post('/workout', {
+                id: String(uuid.v4()),
+                title: nameWorkout,
+                exercises: exercise
+            
+        })
+        setExercise([]);
+        setNameWorkouk('')
+        navigation.navigate('Dashboard')
+    }
 
-          return (
+    return (
         <Container>
             <TextContainer>
                 <WelcomeMessage>Monte seu</WelcomeMessage>
@@ -142,7 +132,7 @@ export function BuildWorkout() {
                 contentContainerStyle={{ alignItems: 'center', justifyContent: 'center', paddingBottom: 20 }}
                 data={exercise}
                 renderItem={({ item }) =>
-                    <WorkoutCard
+                    <ExerciseCard
                         title={item.nameExercise}
                         series={item.series}
                         repetitions={item.repetitions}

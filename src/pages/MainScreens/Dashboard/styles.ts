@@ -15,7 +15,7 @@ justify-content: space-between;
 padding: 50px 24px 0;
 
 
-background-color: ${({theme}) => theme.colors.Primary};
+background-color: ${({theme}) => theme.colors.Title};
 
 border-bottom-left-radius: 15px ;
 border-bottom-right-radius: 15px ;
@@ -67,13 +67,12 @@ font-family: ${({theme}) => theme.Fonts.SemiBold};
 color: ${({theme}) => theme.colors.Title};
 font-size: 20px;
 margin-top: 20px;
-margin-left: 30px;
 
 `
 export const WorkoutButton = styled.TouchableOpacity.attrs({
   activeOpacity: .8
 })`
-width:350px;
+width:320px;
 height:150px;
 justify-content:space-between;
 align-items:center;
@@ -108,11 +107,12 @@ height:100px;
 `
 
 export const Cards = styled.View`
-flex: 1;
 flex-direction: row;
-justify-content: space-between;
-padding: 10px 24px;
+justify-content: space-around;
+padding: 10px 0px;
 `
 export const Content = styled.ScrollView.attrs({
    showsVerticalScrollIndicator: false
-})``
+})`
+padding: 0px 25px;
+`
