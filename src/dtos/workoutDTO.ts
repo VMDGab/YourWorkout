@@ -1,12 +1,13 @@
 export interface WorkoutDTO {
+  [x: string]: never;
   id: string,
   title: string,
-  exercise: [
+  exercises: {
     idExercise: string,
     nameExercise: string,
     series: number,
     repetitions: number
-  ]
+  }[],
 
   
 }

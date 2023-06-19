@@ -12,9 +12,9 @@ interface Props {
     title: string,
 }
 
-export function WorkoutCard({ title }: Props) {
+export function WorkoutCard({ title, ...rest}: Props) {
     return (
-        <Container>
+        <Container {...rest}>
             <WorkoutContainer>
                 <HalterTabSvg />
                 <Title>{title}</Title>

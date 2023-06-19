@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
 flex: 1;
-  
+justify-content: space-between;
 background-color: ${({theme}) => theme.colors.BACKGROUND};
 `;
 
@@ -10,13 +10,13 @@ export const Header = styled.View`
 width: 100%;
 height: 230px;
 
-background-color: ${({theme}) => theme.colors.Primary};
+background-color: ${({theme}) => theme.colors.Title};
 
 border-bottom-left-radius: 15px;
 border-bottom-right-radius: 15px;
 
 flex-direction: row;
-
+justify-content: space-between;
 align-items: flex-end;
 
 padding: 24px;
@@ -34,3 +34,10 @@ font-size: 20px;
 
 `
 export const CountWrapper = styled.View``
+
+export const Footer = styled.View`
+flex:.9 ;
+margin-bottom: 20px;
+justify-content: flex-end;
+align-items: center;
+`

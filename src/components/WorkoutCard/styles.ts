@@ -1,8 +1,10 @@
 import styled from 'styled-components/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
-export const Container = styled.View`
-width:300px;
+export const Container = styled.TouchableOpacity.attrs({
+    activeOpacity: .7
+})`
+width:320px;
 padding: 14px;
 
 flex-direction: row;
@@ -28,7 +30,7 @@ font-family: ${(props) => props.theme.Fonts.SemiBold} ;
 color: ${({theme}) => theme.colors.Title};
 font-size: 15px;
 
-margin-left: 5px;
+margin-left: 10px;
 `
 export const Icon = styled(MaterialCommunityIcons)`
 font-size: 20px;

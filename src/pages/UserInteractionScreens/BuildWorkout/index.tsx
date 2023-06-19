@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FlatList } from 'react-native-gesture-handler';
+import React, { useEffect, useState } from 'react';
+import { FlatList, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView } from 'react-native';
 import { ExerciseCard } from '../../../components/ExerciseCard';
 import { Button } from '../../../components/Button';
 import { useNavigation } from '@react-navigation/native';
@@ -20,7 +20,9 @@ import {
     FormWrapper,
     MiniInputWrapper,
     ButtonText,
+    ExercisesContainer,
 } from './styles';
+import { BackButton } from '../../../components/BackButton';
 
 
 interface Props {
@@ -39,8 +41,7 @@ export function BuildWorkout() {
     const [nameExercise, setNameExercise] = useState('');
     const [series, setSeries] = useState(Number);
     const [repetitions, setRepetitions] = useState(Number);
-    const [nameWorkout, setNameWorkouk] = useState('')
-
+    const [nameWorkout, setNameWorkouk] = useState('');
 
 
     function handleSetExercise() {
@@ -61,10 +62,10 @@ export function BuildWorkout() {
     async function handleSetWorkout() {
 
         await api.post('/workout', {
-                id: String(uuid.v4()),
-                title: nameWorkout,
-                exercises: exercise
-            
+            id: String(uuid.v4()),
+            title: nameWorkout,
+            exercises: exercise
+
         })
         setExercise([]);
         setNameWorkouk('')
@@ -72,77 +73,85 @@ export function BuildWorkout() {
     }
 
     return (
-        <Container>
-            <TextContainer>
-                <WelcomeMessage>Monte seu</WelcomeMessage>
-                <Title>Novo Treino</Title>
-            </TextContainer>
+        <KeyboardAvoidingView behavior='padding' enabled>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
-            <TitleWorkoutInput
-                placeholder="Nome do treino"
-                placeholderTextColor="#B2B2B2"
-                returnKeyType="send"
-                selectionColor="#666666"
-                onChangeText={text => setNameWorkouk(text)}
-                value={nameWorkout}
-            />
+                <Container>
 
-            <FormWrapper>
+                    <TextContainer>
+                        <WelcomeMessage>Monte seu</WelcomeMessage>
+                        <Title>Novo Treino</Title>
+                    </TextContainer>
 
-                <Input
-                    placeholder="Nome do exercício"
-                    placeholderTextColor="#B2B2B2"
-                    returnKeyType="send"
-                    selectionColor="#666666"
-                    onChangeText={text => setNameExercise(text)}
-                    value={nameExercise}
-                />
+                    <TitleWorkoutInput
+                        placeholder="Nome do treino"
+                        placeholderTextColor="#B2B2B2"
+                        returnKeyType="send"
+                        selectionColor="#666666"
+                        onChangeText={text => setNameWorkouk(text)}
+                        value={nameWorkout}
+                    />
 
-                <InputWrapper>
+                    <FormWrapper>
 
-                    <MiniInputWrapper>
-
-                        <MiniInput
-                            placeholder="Series"
+                        <Input
+                            placeholder="Nome do exercício"
                             placeholderTextColor="#B2B2B2"
                             returnKeyType="send"
                             selectionColor="#666666"
-                            onChangeText={text => setSeries(text)}
-                            value={series} />
+                            onChangeText={setNameExercise}
+                            value={nameExercise}
+                        />
 
-                        <MiniInput
-                            placeholder="Repetições"
-                            placeholderTextColor="#B2B2B2"
-                            returnKeyType="send"
-                            selectionColor="#666666"
-                            onChangeText={text => setRepetitions(text)}
-                            value={repetitions} />
 
-                    </MiniInputWrapper>
+                        <InputWrapper>
 
-                    <InputButton onPress={handleSetExercise}>
-                        <ButtonText>Salvar Exercício</ButtonText>
-                    </InputButton>
+                            <MiniInputWrapper>
 
-                </InputWrapper>
+                                <MiniInput
+                                    placeholder="Series"
+                                    placeholderTextColor="#B2B2B2"
+                                    returnKeyType="send"
+                                    selectionColor="#666666"
+                                    onChangeText={text => setSeries(text)}
+                                    value={series} />
 
-            </FormWrapper>
+                                <MiniInput
+                                    placeholder="Repetições"
+                                    placeholderTextColor="#B2B2B2"
+                                    returnKeyType="send"
+                                    selectionColor="#666666"
+                                    onChangeText={text => setRepetitions(text)}
+                                    value={repetitions} />
 
-            <FlatList
-                contentContainerStyle={{ alignItems: 'center', justifyContent: 'center', paddingBottom: 20 }}
-                data={exercise}
-                renderItem={({ item }) =>
-                    <ExerciseCard
-                        title={item.nameExercise}
-                        series={item.series}
-                        repetitions={item.repetitions}
+                            </MiniInputWrapper>
 
-                    />}
-            />
+                            <InputButton onPress={handleSetExercise}>
+                                <ButtonText>Salvar Exercício</ButtonText>
+                            </InputButton>
 
-            <Footer>
-                <Button Title='Salvar' onPress={handleSetWorkout} />
-            </Footer>
-        </Container>
+                        </InputWrapper>
+
+                    </FormWrapper>
+
+                    <FlatList
+                        contentContainerStyle={{ alignItems: 'center', justifyContent: 'center', paddingBottom: 20, }}
+                        data={exercise}
+                        renderItem={({ item }) =>
+                            <ExerciseCard
+                                title={item.nameExercise}
+                                series={item.series}
+                                repetitions={item.repetitions}
+
+                            />}
+                    />
+
+                    <Footer>
+                        <Button Title='Salvar' onPress={handleSetWorkout} />
+                    </Footer>
+                </Container>
+
+            </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
     );
 }

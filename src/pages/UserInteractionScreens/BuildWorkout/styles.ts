@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  flex: 1;
+background-color: ${({theme}) => theme.colors.BACKGROUND};
+height: 100%;
 `;
 
 export const WelcomeMessage = styled.Text`
@@ -64,8 +65,8 @@ color: ${({theme}) => theme.colors.Shape};
 `
 
 export const Footer = styled.View`
-
-justify-content: flex-end;
+background-color: ${({theme}) => theme.colors.BACKGROUND};
+justify-self: flex-end;
 padding-bottom: 24px;
 
 `
@@ -116,4 +117,7 @@ width: 45%;
 flex-direction: row;
 justify-content: space-between;
 
+`
+export const ExercisesContainer = styled.View`
+height:100px;
 `

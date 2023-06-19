@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
-
 import HalterTabSvg from '../../../assets/HalterTab.svg'
-
-
 import { useNavigation } from '@react-navigation/native';
 import { TrainingAnime } from '../../../components/TrainingAnime';
-
 import { NewCard } from '../../../components/NewCard';
+import { ContentButton } from '../../../components/ContentButton';
+import { TabBar } from '../../../components/tabBar';
 import {
   Container,
   Header,
@@ -27,7 +24,8 @@ import {
   Menu,
   MenuIcon,
 } from './styles';
-import { ContentButton } from '../../../components/ContentButton';
+import { StatusBar } from 'react-native';
+
 
 
 export function Dashboard() {
@@ -56,6 +54,7 @@ export function Dashboard() {
 
   return (
     <Container>
+      <StatusBar barStyle='light-content' translucent backgroundColor='transparent' />
       <Header>
 
         <HeaderWrapper>
@@ -74,36 +73,38 @@ export function Dashboard() {
 
         </HeaderWrapper>
         <Menu>
-          <MenuIcon name= 'menu'/>
+          <MenuIcon name='menu' />
         </Menu>
       </Header>
-<Content>
+      <Content>
         <Title>
           Treino de Hoje
         </Title>
-<TodayWorkout>
-        
+        <TodayWorkout>
 
-        <WorkoutButton>
-          <WorkoutButtonWrapper>
-            <TrainingAnime />
-            
-            <InfoWorkout>
-            <HalterTabSvg />
-            <WorkoutTitle>Costa, Bíceps{'\n'}e antebraço</WorkoutTitle>
-            </InfoWorkout>
-         
-          </WorkoutButtonWrapper>
-        </WorkoutButton>
-        <ContentButton icon='arm-flex-outline' title='Iniciar outro treino' style={{alignSelf: 'center', marginTop:20}}/>
 
- </TodayWorkout>
-    <Title>Afim de inovar?</Title>
-   <Cards>
-   <NewCard type='Workout' onPress={() => navigation.navigate('BuildWorkout')}/>
-   <NewCard type='Diet'/>
-  </Cards>
-</Content>
+          <WorkoutButton>
+            <WorkoutButtonWrapper>
+              <TrainingAnime />
+
+              <InfoWorkout>
+                <HalterTabSvg />
+                <WorkoutTitle>Costa, Bíceps{'\n'}e antebraço</WorkoutTitle>
+              </InfoWorkout>
+
+            </WorkoutButtonWrapper>
+          </WorkoutButton>
+          <ContentButton icon='arm-flex-outline' title='Iniciar outro treino' style={{ alignSelf: 'center', marginTop: 20 }} />
+
+        </TodayWorkout>
+        <Title>Afim de inovar?</Title>
+        <Cards>
+          <NewCard type='Workout' onPress={() => navigation.navigate('BuildWorkout')} />
+          <NewCard type='Diet' onPress={() => navigation.navigate('NewDiet')} />
+        </Cards>
+      </Content>
+
+      <TabBar />
     </Container>
   );
 }

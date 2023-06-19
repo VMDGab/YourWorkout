@@ -8,6 +8,8 @@ import {
     Repetitions,
     Series,
     Volume,
+    SeparatorLine,
+    CardIcons,
 } from './styles';
 
 import HalterTabSvg from '../../assets/HalterTab.svg'
@@ -24,16 +26,19 @@ export function ExerciseCard({ title, series, repetitions }: Props) {
             <Info>
                 <WorkoutContainer>
                     <HalterTabSvg />
-                   <Volume>
-                    <Series>{series} Series</Series>
-                    <Repetitions>{repetitions} Reps</Repetitions>
-                </Volume>
-                </WorkoutContainer>
-            <Title>{title}</Title>
-                
-            </Info>
-            <Icon name='pencil-outline' />
 
+                </WorkoutContainer>
+                <Title>{title}</Title>
+                <Volume>
+                    <Series>{series} Series</Series>
+                    <SeparatorLine />
+                    <Repetitions>{repetitions} Repetições</Repetitions>
+                </Volume>
+            </Info>
+            <CardIcons>
+                <Icon name='trash' />
+                <Icon name='pencil' />
+            </CardIcons>
         </Container>
     );
 }

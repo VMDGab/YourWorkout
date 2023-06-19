@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { Octicons } from '@expo/vector-icons'; 
 
 export const Container = styled.View`
 width:300px;
@@ -8,7 +8,7 @@ padding: 14px;
 flex-direction: row;
 
 justify-content: space-between;
-align-items:center;
+
 
 border-width: 2px;
 border-radius: 10px;
@@ -30,8 +30,8 @@ font-size: 20px;
 margin-left: 5px;
 margin-top: 10px;
 `
-export const Icon = styled(MaterialCommunityIcons)`
-font-size: 20px;
+export const Icon = styled(Octicons)`
+font-size: 22px;
 color: ${({theme}) => theme.colors.Primary};
 `
 export const Info = styled.View`
@@ -42,7 +42,7 @@ export const Repetitions = styled.Text`
 font-family: ${(props) => props.theme.Fonts.SemiBold} ;
 color: ${({theme}) => theme.colors.Title};
 font-size: 14px;
-margin-left: 10px;
+
 `
 export const Series = styled.Text`
 font-family: ${(props) => props.theme.Fonts.SemiBold} ;
@@ -51,6 +51,17 @@ font-size: 14px;
 `
 export const Volume = styled.View`
 flex-direction: row;
+padding-left: 5px;
+`
+export const SeparatorLine = styled.View`
+height: 20px;
+width: 2px;
+background-color: ${({theme}) => theme.colors.Primary};
+margin-left: 5px;
+margin-right: 5px;
+`
+export const CardIcons = styled.View`
+flex:1;
+
 justify-content: space-between;
-margin-left: 10px;
 `
