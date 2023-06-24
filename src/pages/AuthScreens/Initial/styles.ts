@@ -39,9 +39,8 @@ export const SignUpButton = styled.TouchableOpacity.attrs({
 width: 70%;
 height: ${RFPercentage(7)}px;
 border-radius: 10px;
-border-width:3px;
-border-color:${({theme}) => theme.colors.Primary};
-background-color: ${({theme}) => theme.colors.Shape};
+
+background-color: ${({theme}) => theme.colors.Title};
 align-self: center;
 align-items: center ;
 justify-content: center;
@@ -51,6 +50,13 @@ export const Title = styled.Text`
 
 font-size: 20px;
 color: ${(props) => props.theme.colors.Title};
+font-family: ${(props) => props.theme.Fonts.SemiBold} ;
+text-align: center;
+`
+export const ButtonTitle = styled.Text`
+
+font-size: 20px;
+color: ${(props) => props.theme.colors.Shape};
 font-family: ${(props) => props.theme.Fonts.SemiBold} ;
 text-align: center;
 `

@@ -12,6 +12,7 @@ import {
     Line,
     SignUpButton,
     Title,
+    ButtonTitle,
 } from './styles';
 
 import { useNavigation } from '@react-navigation/native';
@@ -46,7 +47,7 @@ const navigation = useNavigation();
                 </Separator>
 
                 <SignUpButton onPress={() => navigation.navigate('SignUp')}>
-                    <Title>Cadastrar-se</Title>
+                    <ButtonTitle>Cadastrar-se</ButtonTitle>
                 </SignUpButton>
             </LoginOptions>
 

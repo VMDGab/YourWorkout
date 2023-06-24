@@ -6,11 +6,11 @@ import { RectButtonProps } from 'react-native-gesture-handler';
 
 
 interface props extends RectButtonProps {
-    darkHeader: boolean;
+    darkHeader?: boolean;
     onPress: () => void;
 }
 
-export function BackButton({darkHeader, onPress} : props) {
+export function BackButton({darkHeader = false, onPress} : props) {
 
     const theme = useTheme()
   return (

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SignUpImageSvg from '../../../assets/SignUpImage.svg'
 import Google from '../../../assets/google.svg'
 import apple from '../../../assets/apple.svg'
-import { InputForm } from '../../../components/InputForm';
+import { Input } from '../../../components/Input';
+import { InputPassword } from '../../../components/InputPassword';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
@@ -24,40 +25,55 @@ import {
 } from './styles';
 import { Button } from '../../../components/Button';
 
-
-const schema = Yup.object().shape({
-
-  Login: Yup
-    .string()
-    .required('Informe o seu Email ou CPF'),
-
-  Email: Yup
-    .string()
-    .required('Informe o seu Email'),
-
-  Password: Yup
-    .string()
-    .required('Informe o sua senha'),
-
-  ConfPassword: Yup
-    .string()
-    .required('Confirme sua senha'),
-})
-
 export function SignUp() {
+
+  async function handleSignUp() {
+    try {
+
+      const schema = Yup.object().shape({
+
+        name: Yup
+          .string()
+          .required('Informe o seu Email ou CPF'),
+
+        email: Yup
+          .string()
+          .required('Informe o seu Email'),
+
+        password: Yup
+          .string()
+          .required('Informe o sua senha'),
+
+        confPassword: Yup
+          .string()
+          .required('Confirme sua senha'),
+      })
+
+      await schema.validate({name,email,password, confPassword })
+      if(password === confPassword){
+
+        // Cadastrar usuario no banco
+      }
+     
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        Alert.alert('Opa', error.message)
+      } else {
+        Alert.alert(
+          'Erro na autenticação',
+          'Ocorreu um erro ao fazer login, verifique suas credenciais'
+        )
+      }
+    }
+  }
+
 
   const navigation = useNavigation();
 
-  const {
-    formState: { errors },
-    handleSubmit,
-    control,
-    reset
-
-  } = useForm({
-    resolver: yupResolver(schema)
-  })
-
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confPassword, setConfPassword] = useState('');
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Container>
@@ -77,52 +93,42 @@ export function SignUp() {
 
 
           <InputContainer>
-            <InputForm
-              name="Login"
-              Control={control}
+            <Input
+              iconName='person'
               placeholder='Nome'
-              autoCapitalize='sentences'
               autoCorrect={false}
-              keyboardType='email-address'
-              error={errors.Login && errors.Login.message}
-              icon='person'
+              autoCapitalize='none'
               title='Nome'
+              onChangeText={setName}
+              value={name}
             />
-
-            <InputForm
-              name="Email"
-              Control={control}
+            <Input
+              iconName='mail'
               placeholder='E-mail'
-              autoCapitalize='sentences'
+              keyboardType='email-address'
               autoCorrect={false}
-              error={errors.Password && errors.Password.message}
-              icon='mail'
-              title='E-mail'
+              autoCapitalize='none'
+              title='Email'
+              onChangeText={setEmail}
+              value={email}
             />
-
-            <InputForm
-              name="Password"
-              Control={control}
+            <InputPassword
+              iconName='lock'
               placeholder='Senha'
-              autoCapitalize='sentences'
-              autoCorrect={false}
-              error={errors.Password && errors.Password.message}
-              icon='lock'
+              onChangeText={setPassword}
+              value={password}
               title='Senha'
             />
-            <InputForm
-              name="ConfPassword"
-              Control={control}
-              placeholder='Confirmar Senha'
-              autoCapitalize='sentences'
-              autoCorrect={false}
-              error={errors.Password && errors.Password.message}
-              icon='lock'
+            <InputPassword
+              iconName='lock'
+              placeholder='Repita sua senha'
+              onChangeText={setConfPassword}
+              value={confPassword}
               title='Confirmar Senha'
             />
           </InputContainer>
         </KeyboardAvoidingView>
-        <Button Title='Cadastrar' />
+        <Button Title='Cadastrar' onPress={handleSignUp}/>
 
       </Container>
     </TouchableWithoutFeedback>

@@ -9,7 +9,6 @@ export const Container = styled.View`
     width:87%;
     margin-bottom: 8px;
    
- 
  `;
 
 export const Icon = styled(Octicons)`
@@ -43,5 +42,7 @@ border-color: ${({ theme }) => theme.colors.border};
     border-bottom-width: 2px ;
     border-bottom-color: ${theme.colors.Primary} ;
 
-`}
+`
+
+}
 `

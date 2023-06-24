@@ -6,14 +6,13 @@ import {
   Title,
   Header,
 } from './styles';
-import { useTheme } from 'styled-components';
-import { Octicons } from '@expo/vector-icons'
+
 import { TextInputProps } from 'react-native';
 
 interface Props extends TextInputProps {
-  iconName: string,
+  iconName?: string,
   value?: string;
-  title:string
+  title?:string
 
 }
 
@@ -36,8 +35,8 @@ export function Input({ iconName, value,title, ...rest }: Props) {
         <Icon name={iconName} />
         <Title>{title}</Title>
       </Header> 
-      
-      <InputText
+
+        <InputText
         isFocused={isFocused}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}

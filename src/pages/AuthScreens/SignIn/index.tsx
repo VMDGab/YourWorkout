@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import SignInImageSvg from '../../../assets/SignInImage.svg'
 import Google from '../../../assets/google.svg'
 import apple from '../../../assets/apple.svg'
-import { InputForm } from '../../../components/InputForm';
 import * as Yup from 'yup';
 import { useNavigation } from '@react-navigation/native';
 import { Alert, Platform } from 'react-native';
@@ -54,6 +53,7 @@ export function SignIn() {
 
       await schema.validate({ email, password })
       signIn({ email, password })
+      
     } catch(error){
       if(error instanceof Yup.ValidationError){
        Alert.alert('Opa', error.message)
@@ -108,7 +108,7 @@ export function SignIn() {
               />
         </InputContainer>
 
-        <Button Title='Entrar' />
+        <Button Title='Entrar' onPress={handleSignIn}/>
 
         {/* {/* <SocialLoginOptions>
         <MainText>Ou faça login com</MainText>
