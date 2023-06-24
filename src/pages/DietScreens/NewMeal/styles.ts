@@ -32,22 +32,24 @@ padding: 30px;
 
 `;
 
-export const DefaultInput = styled.TextInput<Props>`
+export const DefaultInput = styled.TextInput`
 padding-left: 10px;
 height:${RFValue(40)}px;
 width: 87%;
 background-color: ${({ theme }) => theme.colors.Shape};
+color: ${({ theme }) => theme.colors.Title};
 margin-bottom: ${RFValue(15)}px;
 border-radius: 10px;
 border-width: 1.5px;
 border-color: ${({ theme }) => theme.colors.border};
 `
 
-export const DescriptionInput = styled.TextInput<Props>`
+export const DescriptionInput = styled.TextInput`
 padding-left: 10px;
 width: 87%;
 height:${RFValue(80)}px;
 background-color: ${({ theme }) => theme.colors.Shape};
+color: ${({ theme }) => theme.colors.Title};
 margin-bottom: ${RFValue(10)}px;
 border-radius: 10px;
 border-width: 1.5px;

@@ -37,7 +37,7 @@ export default function App() {
 
     <ThemeProvider theme={Theme} >
       <NavigationContainer>
-         <NewMeal/>
+         <AppRoutes/>
         </NavigationContainer>
     </ThemeProvider>
 

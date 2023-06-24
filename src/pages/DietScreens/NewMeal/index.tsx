@@ -23,7 +23,7 @@ export function NewMeal() {
 
     const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
-    const Meals = '@YourWorkoutt:Refeicoes'
+    const Meals = '@YourWorkout:Refeicoes';
     const [nameMeal, setNameMeal] = useState('');
     const [descriptionMeal, setDescriptionMeal] = useState('');
 

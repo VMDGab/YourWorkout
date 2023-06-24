@@ -1,52 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EclipseSvg from '../../../assets/Ellipse.svg'
 import {
     Container,
     DietOverview,
-    Calorie,
-    CalorieValue,
     Type,
     MacroValue,
     Value,
-    OtherMacros,
-    Emphasis,
+    Macros,
     ButtonStyle,
+    Input,
 } from './styles';
 import { ContentButton } from '../../../components/ContentButton';
 
 export function NewDiet() {
+
+    const Meals = '@YourWorkout:Refeicoes';
+    const [nameDiet, setNameDiet] = useState('');
+
     return (
         <Container>
             <DietOverview>
-                <Emphasis>
-                    <EclipseSvg />
-
-                    <Calorie>
-                        <CalorieValue>3580</CalorieValue>
-                        <Type>Calorias</Type>
-                    </Calorie>
-                </Emphasis>
-                <OtherMacros>
+                <Input 
+                placeholder='Nome da dieta'
+                autoCorrect={false}
+                autoCapitalize='none'
+                onChangeText={setNameDiet}
+                value={nameDiet}
+                />
+                <Macros>
+                    <MacroValue>
+                        <Value>160g</Value>
+                    <Type>Proteínas</Type>
+                    </MacroValue>
 
                     <MacroValue>
                         <Value>160g</Value>
+                        <Type>Proteínas</Type>
                     </MacroValue>
-                    <Type>Proteínas</Type>
-
                     <MacroValue>
                         <Value>250g</Value>
-                    </MacroValue>
                     <Type>Carboidratos</Type>
+                    </MacroValue>
 
                     <MacroValue>
                         <Value>60g</Value>
-                    </MacroValue>
                     <Type>Gorduras</Type>
+                    </MacroValue>
 
-                </OtherMacros>
+                </Macros>
             </DietOverview>
             <ButtonStyle>
-            <ContentButton title='Nova refeição' icon='plus'/>
+                <ContentButton title='Nova refeição' icon='plus' />
             </ButtonStyle>
         </Container>
     );

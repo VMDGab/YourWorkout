@@ -36,6 +36,7 @@ background-color: ${({ theme }) => theme.colors.Shape};
 margin-bottom: ${RFValue(15)}px;
 border-radius: 10px;
 border-width: 1.5px;
+color: ${({ theme }) => theme.colors.Title};
 border-color: ${({ theme }) => theme.colors.border};
     ${({ isFocused, theme }) => isFocused && css`
     
